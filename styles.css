@@ -56,6 +56,7 @@ body {
     background-color: #c1121f;
     color: #fff;
     transition: background-color 0.3s, transform 0.3s;
+    grid-column: 1/5;
 }
 
 /* Add hover effect */
