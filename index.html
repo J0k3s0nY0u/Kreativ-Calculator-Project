@@ -9,9 +9,12 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" readonly>
+        <input type="text" id="display" >
         <div class="buttons">
-            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="clearDisplay()" class="clear" id="clear">C</button>
+            <span></span>
+            <span></span>
+            <button onclick="backspace()" class="clear" id="bs">←</button>
             
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
@@ -31,5 +34,7 @@
             <button onclick="appendToDisplay('+')" class="operator">+</button>
         </div>
     </div>
+
+    <script src="./backspace.js"></script>
 </body>
 </html>
