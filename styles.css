@@ -52,6 +52,12 @@ body {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+.calculator button.operator.active {
+    background-color: #18ff03;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 .calculator button.clear {
     background-color: #c1121f;
     color: #fff;
