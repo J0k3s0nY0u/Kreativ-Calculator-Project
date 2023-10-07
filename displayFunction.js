@@ -1,5 +1,5 @@
 let display = document.getElementById('display');
 
-    export  function appendToDisplay(value) {
+      function appendToDisplay(value) {
             display.value += value;
         }
