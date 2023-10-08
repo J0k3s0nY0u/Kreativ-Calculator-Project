@@ -9,9 +9,7 @@ function assignOperator(op) {
         }
         return;
     }
-    if (operator_check) {
-        display.value = calculateResult();
-    }
+    
     operator = op;
     operator_check = true;
     start_over = true;
