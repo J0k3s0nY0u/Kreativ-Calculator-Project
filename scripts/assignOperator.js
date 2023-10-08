@@ -1,5 +1,5 @@
 function assignOperator(op) {
-    if(operator_check){
+    if(operator_check && !result_check){
         calculateResult();
     }
     operand1 = display.value;

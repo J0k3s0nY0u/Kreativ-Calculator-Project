@@ -4,7 +4,7 @@ function calculateResult() {
     }
     else {
         if (result_check) {
-            operand1 = display.value;
+            operand1 = result;
         }
         else {
             operand2 = display.value;
@@ -12,22 +12,23 @@ function calculateResult() {
         console.log(`${operand1} ,${operator}, ${operand2}`)
         switch (operator) {
             case '+':
-                display.value = sum(operand1, operand2);
+                result = sum(operand1, operand2)
+                display.value = result;
                 break;
 
             case '-':
-                display.value = difference(operand1, operand2);
+                result = difference(operand1, operand2)
+                display.value = result;
                 break;
 
             case '*':
-                display.value = product(operand1, operand2);
+                result = product(operand1, operand2);
+                display.value = result;
                 break;
 
             case '/':
-                if(operand2 === 0){
-                    clearDisplay();
-                }
-                display.value = division(operand1, operand2);
+                result = division(operand1, operand2)
+                display.value = result;
                 break;
 
             default:

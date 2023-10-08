@@ -3,6 +3,7 @@ const display = document.getElementById('display')
 
 let operand1 = 0;
 let operand2 = 0;
+let result = 0;
 
 let operator = null;
 
