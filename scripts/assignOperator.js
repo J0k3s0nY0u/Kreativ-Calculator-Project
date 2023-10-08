@@ -1,4 +1,7 @@
 function assignOperator(op) {
+    if(operator_check){
+        calculateResult();
+    }
     operand1 = display.value;
     if (start_over) {
         if (operator !== op) {
@@ -13,5 +16,31 @@ function assignOperator(op) {
     operator_check = true;
     start_over = true;
     result_check = false;
-    console.log(operand1, operator)
+
+    const removeActive = () => {
+        document.getElementById("/").classList.remove("active");
+        document.getElementById("*").classList.remove("active");
+        document.getElementById("-").classList.remove("active");
+        document.getElementById("+").classList.remove("active");
+    };
+    switch (op) {
+        case "/":
+            removeActive();
+            document.getElementById(op).classList.add("active");
+            break;
+        case "*":
+            removeActive();
+            document.getElementById(op).classList.add("active");
+            break;
+        case "-":
+            removeActive();
+            document.getElementById(op).classList.add("active");
+            break;
+        case "+":
+            removeActive();
+            document.getElementById(op).classList.add("active");
+            break;
+        default:
+            break;
+    }
 }
