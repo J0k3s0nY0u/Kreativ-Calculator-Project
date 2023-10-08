@@ -14,10 +14,8 @@ const keyboardFunctions = () => {
           plus === "operator active"
         ) {
           return true;
-        } else {
-          return false;
-        }
-      }
+        } else return false;
+      };
       const removeActive = () => {
         document.getElementById("/").classList.remove("active");
         document.getElementById("*").classList.remove("active");
@@ -25,64 +23,50 @@ const keyboardFunctions = () => {
         document.getElementById("+").classList.remove("active");
       };
       const keyboardStroke = () => {
-        appendToDisplay(e.key)
+        if (checkActive() === true) {
+          removeActive();
+          display.value = "";
+          appendToDisplay(e.key);
+        } else {
+          appendToDisplay(e.key);
+        }
       };
       switch (e.key) {
         case "1":
-          keyboardStroke();
-          break;
         case "2":
-          keyboardStroke();
-          break;
         case "3":
-          keyboardStroke();
-          break;
         case "4":
-          keyboardStroke();
-          break;
         case "5":
-          keyboardStroke();
-          break;
         case "6":
-          keyboardStroke();
-          break;
         case "7":
-          keyboardStroke();
-          break;
         case "8":
-          keyboardStroke();
-          break;
         case "9":
-          keyboardStroke();
-          break;
         case "0":
+        case ".":
           keyboardStroke();
           break;
+
         case "/":
-          removeActive();
-          document.getElementById("/").classList.add("active");
-          break;
         case "*":
-          removeActive();
-          document.getElementById("*").classList.add("active");
-          break;
         case "-":
-          removeActive();
-          document.getElementById("-").classList.add("active");
-          break;
         case "+":
+          assignOperator(e.key);
           removeActive();
-          document.getElementById("+").classList.add("active");
+          document.getElementById(e.key).classList.add("active");
           break;
+
         case "Backspace":
           backspace();
           break;
+
         case "Delete":
           clearDisplay();
           break;
+
         case "Enter":
           calculateResult();
           break;
+
         default:
           break;
       }

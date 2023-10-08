@@ -35,8 +35,5 @@ function calculateResult() {
         }
         result_check = true;
         start_over = true;
-
-        // operator_check = false;
-        // operator = '';
     }
 }
