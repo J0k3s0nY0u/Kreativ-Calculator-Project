@@ -1,3 +1,5 @@
+
+
 const appendToDisplay = (props) => {
   const checkActive = () => {
     let divide = document.getElementById("/").classList.value;
@@ -11,8 +13,10 @@ const appendToDisplay = (props) => {
       plus === "operator active"
     ) {
       return true;
-    } else return false;
-  };
+    } else {
+      return false;
+    }
+  }
 
   const removeActive = () => {
     document.getElementById("/").classList.remove("active");
@@ -20,6 +24,7 @@ const appendToDisplay = (props) => {
     document.getElementById("-").classList.remove("active");
     document.getElementById("+").classList.remove("active");
   };
+
   if (
     props === "1" ||
     props === "2" ||
@@ -32,11 +37,30 @@ const appendToDisplay = (props) => {
     props === "9" ||
     props === "0"
   ) {
-    if (checkActive() === true) {
+    if (checkActive() === true || display.value === "0" || start_over || result_check) {
       removeActive();
-      document.getElementById("display").value = props;
-    } else document.getElementById("display").value += props;
+      display.value = props;
+      start_over = false;
+      result_check = false;
+    } else {
+      display.value += props;
+    }
   }
+
+  if (props === "."){
+    if(display.value.match(/[.]/)){
+      return;
+    }
+    else{
+      if(display.value === ""){
+        display.value = "0."
+      }
+      else{
+        display.value += "."
+      }
+    }
+  } 
+  
 
   switch (props) {
     case "/":
@@ -59,3 +83,4 @@ const appendToDisplay = (props) => {
       break;
   }
 };
+

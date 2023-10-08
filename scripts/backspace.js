@@ -1,6 +1,4 @@
-let clear = document.getElementById('clear')
 
-let display = document.getElementById('display')
 
 const backspace = () => {
     let input = display.value

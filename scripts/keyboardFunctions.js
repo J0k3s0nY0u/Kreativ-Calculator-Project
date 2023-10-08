@@ -14,8 +14,10 @@ const keyboardFunctions = () => {
           plus === "operator active"
         ) {
           return true;
-        } else return false;
-      };
+        } else {
+          return false;
+        }
+      }
       const removeActive = () => {
         document.getElementById("/").classList.remove("active");
         document.getElementById("*").classList.remove("active");
@@ -23,13 +25,7 @@ const keyboardFunctions = () => {
         document.getElementById("+").classList.remove("active");
       };
       const keyboardStroke = () => {
-        if (checkActive() === true) {
-          removeActive();
-          document.getElementById("display").value = "";
-          document.getElementById("display").value += e.key;
-        } else {
-          document.getElementById("display").value += e.key;
-        }
+        appendToDisplay(e.key)
       };
       switch (e.key) {
         case "1":
@@ -80,6 +76,12 @@ const keyboardFunctions = () => {
           break;
         case "Backspace":
           backspace();
+          break;
+        case "Delete":
+          clearDisplay();
+          break;
+        case "Enter":
+          calculateResult();
           break;
         default:
           break;
