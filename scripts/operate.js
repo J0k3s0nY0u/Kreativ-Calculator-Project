@@ -3,10 +3,7 @@ function calculateResult() {
         return;
     }
     else {
-        if (result_check) {
-            operand1 = result;
-        }
-        else {
+        if (!result_check) {
             operand2 = display.value;
         }
         console.log(`${operand1} ,${operator}, ${operand2}`)
@@ -34,6 +31,7 @@ function calculateResult() {
             default:
                 return;
         }
+        operand1 = result;
         result_check = true;
         start_over = true;
     }
