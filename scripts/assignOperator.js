@@ -1,14 +1,16 @@
 function assignOperator(op) {
-    if(operator_check && !result_check){
-        calculateResult();
-    }
-    operand1 = display.value;
     if (start_over) {
         if (operator !== op) {
             operator = op;
         }
         return;
     }
+    
+    if(operator_check && !result_check){
+        calculateResult();
+    }
+    operand1 = display.value;
+    
     
     operator = op;
     operator_check = true;
